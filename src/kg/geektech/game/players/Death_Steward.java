@@ -11,13 +11,17 @@ public class Death_Steward extends Hero{
 
     @Override
     public void applySuperPower(Boss boss, Hero[] heroes) {
+        Random r = new Random();
         for (int i = 0; i < heroes.length; i++) {
             if (heroes[i].getHealth() ==0){
                 counter++;
                 if (counter==5){
-                    boss.setHealth(0);
+                    if(counter == r.nextInt(50)){
+                        boss.setHealth(0);
+                    }
+
                 }
-               
+
             }
 
         }
